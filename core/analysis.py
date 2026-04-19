@@ -8,9 +8,11 @@ from core.db import _connect
 def get_image_stats() -> dict:
     """画像付き質問の割合を返す"""
     with _connect() as conn:
-        row = conn.execute(
-            "SELECT COUNT(*) AS total, COALESCE(SUM(has_image), 0) AS with_image FROM questions"
-        ).fetchone()
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT COUNT(*) AS total, COALESCE(SUM(has_image), 0) AS with_image FROM questions"
+            )
+            row = cur.fetchone()
     total = row["total"] or 0
     with_image = int(row["with_image"] or 0)
     return {
@@ -26,9 +28,9 @@ def get_daily_question_counts(days: int = 7) -> pd.DataFrame:
     since = (datetime.now() - timedelta(days=days)).isoformat()
     with _connect() as conn:
         df = pd.read_sql_query(
-            """SELECT substr(timestamp, 1, 10) AS 日付, COUNT(*) AS 件数
+            """SELECT LEFT(timestamp, 10) AS 日付, COUNT(*) AS 件数
                FROM questions
-               WHERE timestamp >= ?
+               WHERE timestamp >= %s
                GROUP BY 日付
                ORDER BY 日付""",
             conn,
@@ -69,7 +71,7 @@ def get_recent_trends(days: int = 7) -> pd.DataFrame:
         df = pd.read_sql_query(
             """SELECT subject_unit AS 単元, COUNT(*) AS 件数
                FROM questions
-               WHERE timestamp >= ? AND subject_unit != ''
+               WHERE timestamp >= %s AND subject_unit != ''
                GROUP BY subject_unit
                ORDER BY 件数 DESC""",
             conn,
@@ -81,13 +83,14 @@ def get_recent_trends(days: int = 7) -> pd.DataFrame:
 def get_follow_up_suggestions(n: int = 5) -> list[dict]:
     """授業でフォローすべき（単元 × つまずき）の上位を返す"""
     with _connect() as conn:
-        rows = conn.execute(
-            """SELECT subject_unit, error_type_estimate, COUNT(*) AS cnt
-               FROM questions
-               WHERE subject_unit != '' AND error_type_estimate != ''
-               GROUP BY subject_unit, error_type_estimate
-               ORDER BY cnt DESC
-               LIMIT ?""",
-            (n,),
-        ).fetchall()
-    return [dict(r) for r in rows]
+        with conn.cursor() as cur:
+            cur.execute(
+                """SELECT subject_unit, error_type_estimate, COUNT(*) AS cnt
+                   FROM questions
+                   WHERE subject_unit != '' AND error_type_estimate != ''
+                   GROUP BY subject_unit, error_type_estimate
+                   ORDER BY cnt DESC
+                   LIMIT %s""",
+                (n,),
+            )
+            return [dict(r) for r in cur.fetchall()]
