@@ -1,6 +1,9 @@
 # 環境変数（APIキー）
 .env
 
+# Claude Code ローカル設定（ローカルパスを含むため除外）
+.claude/
+
 # 教科書データ（ローカルのみ）
 input/
 output/
