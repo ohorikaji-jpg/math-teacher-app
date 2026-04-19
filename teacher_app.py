@@ -14,7 +14,17 @@ st.set_page_config(
 # ──────────────────────────────────────────────
 # パスコード認証
 # ──────────────────────────────────────────────
-PASSCODE = os.environ.get("TEACHER_PASSCODE", "math1234")
+def _get_passcode() -> str:
+    try:
+        import streamlit as _st
+        v = _st.secrets.get("TEACHER_PASSCODE", "")
+        if v:
+            return v
+    except Exception:
+        pass
+    return os.environ.get("TEACHER_PASSCODE", "math1234")
+
+PASSCODE = _get_passcode()
 
 if not st.session_state.get("teacher_authenticated"):
     st.title("📊 教師ダッシュボード")

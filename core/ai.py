@@ -15,8 +15,19 @@ ANSWER_MODEL = "claude-sonnet-4-6"
 CLASSIFY_MODEL = "claude-haiku-4-5-20251001"
 
 
+def _get_api_key() -> str:
+    try:
+        import streamlit as st
+        key = st.secrets.get("ANTHROPIC_API_KEY", "")
+        if key:
+            return key
+    except Exception:
+        pass
+    return os.environ.get("ANTHROPIC_API_KEY", "")
+
+
 def _client() -> anthropic.Anthropic:
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    api_key = _get_api_key()
     if not api_key:
         raise EnvironmentError("ANTHROPIC_API_KEY が設定されていません。.env ファイルを確認してください。")
     return anthropic.Anthropic(api_key=api_key)

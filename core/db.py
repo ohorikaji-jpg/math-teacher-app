@@ -9,6 +9,15 @@ load_dotenv()
 
 
 def _get_dsn() -> str:
+    # Streamlit Cloud の場合は st.secrets から取得
+    try:
+        import streamlit as st
+        dsn = st.secrets.get("DATABASE_URL", "")
+        if dsn:
+            return dsn
+    except Exception:
+        pass
+    # ローカルの場合は .env から取得
     dsn = os.environ.get("DATABASE_URL", "")
     if not dsn:
         raise EnvironmentError("DATABASE_URL が設定されていません。")
