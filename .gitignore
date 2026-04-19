@@ -1,6 +1,10 @@
 # 環境変数（APIキー）
 .env
 
+# 教科書データ（ローカルのみ）
+input/
+output/
+
 # データベース（ログデータ）
 data/questions.db
 
