@@ -1,0 +1,16 @@
+# 環境変数（APIキー）
+.env
+
+# データベース（ログデータ）
+data/questions.db
+
+# アップロード画像
+uploads/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Streamlit
+.streamlit/secrets.toml

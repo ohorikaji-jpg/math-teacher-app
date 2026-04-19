@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/ohori/AppData/Local/Programs/Common//**)",
+      "Read(//c/Users/ohori/miniconda3/**)",
+      "Read(//c/Users/ohori/anaconda3/**)",
+      "Read(//c/ProgramData/miniconda3/**)",
+      "Bash(powershell.exe *)",
+      "Bash(python3 *)",
+      "Bash(py --version)",
+      "Bash(where python *)",
+      "Bash(where py *)",
+      "Read(//c/Users/ohori/AppData/Local/Programs/**)",
+      "Bash(ls /c/Python*)",
+      "Read(//c/Users/ohori/AppData/Local/Microsoft/WindowsApps/**)",
+      "Bash(cmd /c \"python --version\")",
+      "Bash(cmd /c \"py --version\")",
+      "Bash(/c/Users/ohori/AppData/Local/Programs/Python/Python312/python.exe --version)",
+      "Bash(/c/Users/ohori/AppData/Local/Programs/Python/Python312/python.exe -c 'import fitz; print\\('\\\\''pymupdf OK'\\\\''\\)')",
+      "Bash($PYTHON *)",
+      "Bash(/c/Users/ohori/AppData/Local/Programs/Python/Python312/python.exe extract_formulas.py --debug)",
+      "Bash(/c/Users/ohori/AppData/Local/Programs/Python/Python312/python.exe extract_formulas.py --chapter 1)",
+      "Bash(/c/Users/ohori/AppData/Local/Programs/Python/Python312/python.exe extract_formulas.py)",
+      "Bash(python *)"
+    ]
+  }
+}

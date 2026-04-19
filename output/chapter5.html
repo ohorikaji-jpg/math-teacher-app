@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第5章 指数関数と対数関数 公式集</title>
+<style>
+:root {
+  --orange-dark: #e8885a;
+  --orange-light: #fdf0e6;
+  --orange-border: #e8a87c;
+  --text: #2c2c2c;
+  --section-bg: #f9f6f2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  color: var(--text);
+  background: #fafaf8;
+  line-height: 1.7;
+}
+.page-wrap { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+h1.chapter-title {
+  font-size: 1.8rem;
+  border-left: 6px solid var(--orange-dark);
+  padding: 0.4rem 0 0.4rem 0.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+h2.section-title {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--orange-border);
+}
+.formula-card {
+  background: var(--orange-light);
+  border: 1px solid var(--orange-border);
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  overflow: hidden;
+}
+.formula-header {
+  background: var(--orange-dark);
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.formula-page { font-size: 0.78rem; font-weight: normal; opacity: 0.85; }
+.formula-body { padding: 0.8rem 1.2rem; }
+.expr-block {
+  background: #fff;
+  border-left: 3px solid var(--orange-border);
+  padding: 0.5rem 1rem;
+  margin: 0.4rem 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.05rem;
+  overflow-x: auto;
+}
+.expr-text {
+  padding: 0.2rem 0;
+  color: #444;
+  font-size: 0.92rem;
+}
+.list-num {
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+  background: var(--orange-dark);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: bold;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+</style>
+
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+</head>
+<body>
+<div class="page-wrap">
+  <h1 class="chapter-title">第5章 指数関数と対数関数 公式集</h1>
+<h2 class="section-title">第1節 指数関数</h2>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.158</span></div>
+  <div class="formula-body">
+<p class="expr-text">m，n は正の整数とする。</p>
+<span class="list-num">1</span>
+<p class="expr-text">a</p>
+<div class="expr-block">\[ a^n=a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<span class="list-num">2</span>
+<p class="expr-text">(a</p>
+<div class="expr-block">\[ )^n=a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<span class="list-num">3</span>
+<div class="expr-block">\[ (ab)^n=a^n \]</div>
+<div class="expr-block">\[ b^n \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.158</span></div>
+  <div class="formula-body">
+<p class="expr-text">a0 で，n は正の整数とする。</p>
+<div class="expr-block">\[ a^0=1， \]</div>
+<div class="expr-block">\[ a^{-n}= 1 \]</div>
+<div class="expr-block">\[ a^n \]</div>
+<p class="expr-text">とくに</p>
+<div class="expr-block">\[ a^{-1}= 1 \]</div>
+<p class="expr-text">a</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">指数法則(指数が整数)<span class="formula-page">p.159</span></div>
+  <div class="formula-body">
+<p class="expr-text">a0，b0 で，m，n は整数とする。</p>
+<span class="list-num">1</span>
+<p class="expr-text">a</p>
+<div class="expr-block">\[ a^n=a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<span class="list-num">2</span>
+<p class="expr-text">a</p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ a^n=a \]</div>
+<div class="expr-block">\[ ^{-n} \]</div>
+<span class="list-num">3</span>
+<p class="expr-text">(a</p>
+<div class="expr-block">\[ )^n=a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<span class="list-num">4</span>
+<div class="expr-block">\[ (ab)^n=a^n \]</div>
+<div class="expr-block">\[ b^n \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.160</span></div>
+  <div class="formula-body">
+<p class="expr-text">a&gt;0 のとき</p>
+<div class="expr-block">\[ a^n \]</div>
+<p class="expr-text">&gt;0，</p>
+<div class="expr-block">\[ (a^n)^n=a， \]</div>
+<div class="expr-block">\[ a^{nn}=a \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">累乗根の性質<span class="formula-page">p.161</span></div>
+  <div class="formula-body">
+<p class="expr-text">a&gt;0，b&gt;0 で，m，n，p は正の整数とする。</p>
+<span class="list-num">1</span>
+<div class="expr-block">\[ a^n \]</div>
+<div class="expr-block">\[ b^n= ab^n \]</div>
+<span class="list-num">2</span>
+<div class="expr-block">\[ a^n \]</div>
+<div class="expr-block">\[ b^n=  \]</div>
+<p class="expr-text">a</p>
+<div class="expr-block">\[ b^n \]</div>
+<span class="list-num">3</span>
+<div class="expr-block">\[ (a^n) \]</div>
+<div class="expr-block">\[ = a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<span class="list-num">4</span>
+<div class="expr-block">\[ a^n \]</div>
+<div class="expr-block">\[ =a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<span class="list-num">5</span>
+<p class="expr-text">a</p>
+<div class="expr-block">\[ ^n= a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<p class="expr-text"></p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">指数法則(指数が有理数)<span class="formula-page">p.162</span></div>
+  <div class="formula-body">
+<p class="expr-text">a&gt;0，b&gt;0 で，r，s は有理数とする。</p>
+<span class="list-num">1</span>
+<p class="expr-text">a</p>
+<p class="expr-text">a</p>
+<div class="expr-block">\[ =a \]</div>
+<p class="expr-text"></p>
+<span class="list-num">2</span>
+<p class="expr-text">a</p>
+<p class="expr-text"></p>
+<p class="expr-text">a</p>
+<div class="expr-block">\[ =a \]</div>
+<p class="expr-text">⁻</p>
+<span class="list-num">3</span>
+<p class="expr-text">(a</p>
+<p class="expr-text">)</p>
+<div class="expr-block">\[ =a \]</div>
+<p class="expr-text"></p>
+<span class="list-num">4</span>
+<p class="expr-text">(ab)</p>
+<div class="expr-block">\[ =a \]</div>
+<p class="expr-text">b</p>
+<p class="expr-text"></p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.162</span></div>
+  <div class="formula-body">
+<p class="expr-text">a&gt;0 で，m，n は正の整数，r は正の有理数とする。</p>
+<p class="expr-text">a</p>
+<div class="expr-block">\[ ^n= a \]</div>
+<div class="expr-block">\[ ^n \]</div>
+<p class="expr-text">とくに</p>
+<div class="expr-block">\[ a^{1n}= a^n \]</div>
+<p class="expr-text">，</p>
+<p class="expr-text">a⁻</p>
+<div class="expr-block">\[ = 1 \]</div>
+<p class="expr-text">a</p>
+<p class="expr-text"></p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.165</span></div>
+  <div class="formula-body">
+<p class="expr-text">いずれの場合も，軸を漸近線としてもち，点(0，1)，(1，a) を通る。</p>
+<p class="expr-text">a&gt;1 のとき右上がりの曲線，0&lt;a&lt;1 のとき右下がりの曲線である。</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">指数関数=a<span class="formula-page">p.166</span></div>
+  <div class="formula-body">
+<span class="list-num">1</span>
+<p class="expr-text">定義域は実数全体，</p>
+<p class="expr-text">値域は正の数全体である。</p>
+<span class="list-num">2</span>
+<p class="expr-text">a&gt;1 のとき，増≧関数である。</p>
+<p class="expr-text">すなわち</p>
+<p class="expr-text">p&lt;q a</p>
+<p class="expr-text">&lt;a</p>
+<p class="expr-text"></p>
+<span class="list-num">3</span>
+<p class="expr-text">0&lt;a&lt;1 のとき，減少関数である。</p>
+<p class="expr-text">すなわち</p>
+<p class="expr-text">p&lt;q a</p>
+<p class="expr-text">&gt;a</p>
+<p class="expr-text"></p>
+  </div>
+</div>
+
+<h2 class="section-title">第2節 対数関数</h2>
+
+<div class="formula-card">
+  <div class="formula-header">指数と対数<span class="formula-page">p.171</span></div>
+  <div class="formula-body">
+<p class="expr-text">a&gt;0，a1 でM &gt;0 とするとき，次が成り立つ。</p>
+<div class="expr-block">\[ M =a \]</div>
+<p class="expr-text"></p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ logM = p \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.171</span></div>
+  <div class="formula-body">
+<p class="expr-text">loga</p>
+<div class="expr-block">\[ = p \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">対数の性質<span class="formula-page">p.172</span></div>
+  <div class="formula-body">
+<p class="expr-text">a&gt;0，a1，M &gt;0，N &gt;0 のとき</p>
+<span class="list-num">1</span>
+<div class="expr-block">\[ logMN =logM+logN \]</div>
+<span class="list-num">2</span>
+<p class="expr-text">logM</p>
+<div class="expr-block">\[ N =logM-logN \]</div>
+<span class="list-num">3</span>
+<p class="expr-text">logM</p>
+<div class="expr-block">\[ =klogM \]</div>
+<p class="expr-text">k は実数</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.172</span></div>
+  <div class="formula-body">
+<div class="expr-block">\[ log1=0， \]</div>
+<div class="expr-block">\[ loga=1 \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">底の変換公式<span class="formula-page">p.173</span></div>
+  <div class="formula-body">
+<p class="expr-text">a，b，c は正の数で，a1，b1，c1 とするとき</p>
+<div class="expr-block">\[ logb= logb \]</div>
+<p class="expr-text">loga</p>
+<p class="expr-text">とくに</p>
+<div class="expr-block">\[ logb= \]</div>
+<span class="list-num">1</span>
+<p class="expr-text">loga</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">対数関数=logの特徴<span class="formula-page">p.175</span></div>
+  <div class="formula-body">
+<span class="list-num">1</span>
+<p class="expr-text">定義域は正の数全体，</p>
+<p class="expr-text">値域は実数全体である。</p>
+<span class="list-num">2</span>
+<p class="expr-text">a&gt;1 のとき，増≧関数である。</p>
+<p class="expr-text">すなわち0&lt; p&lt;q</p>
+<p class="expr-text"></p>
+<p class="expr-text">logp&lt;logq</p>
+<span class="list-num">3</span>
+<p class="expr-text">0&lt;a&lt;1 のとき，減少関数である。</p>
+<p class="expr-text">すなわち0&lt; p&lt;q</p>
+<p class="expr-text"></p>
+<p class="expr-text">logp&gt;logq</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.175</span></div>
+  <div class="formula-body">
+<p class="expr-text">いずれの場合も，軸を漸近線としてもち，点(1，0)，(a，1) を通る。</p>
+<p class="expr-text">a&gt;1 のとき右上がりの曲線，0&lt;a&lt;1 のとき右下がりの曲線である。</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

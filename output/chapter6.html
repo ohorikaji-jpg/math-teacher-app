@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第6章 微分法と積分法 公式集</title>
+<style>
+:root {
+  --orange-dark: #e8885a;
+  --orange-light: #fdf0e6;
+  --orange-border: #e8a87c;
+  --text: #2c2c2c;
+  --section-bg: #f9f6f2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  color: var(--text);
+  background: #fafaf8;
+  line-height: 1.7;
+}
+.page-wrap { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+h1.chapter-title {
+  font-size: 1.8rem;
+  border-left: 6px solid var(--orange-dark);
+  padding: 0.4rem 0 0.4rem 0.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+h2.section-title {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--orange-border);
+}
+.formula-card {
+  background: var(--orange-light);
+  border: 1px solid var(--orange-border);
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  overflow: hidden;
+}
+.formula-header {
+  background: var(--orange-dark);
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.formula-page { font-size: 0.78rem; font-weight: normal; opacity: 0.85; }
+.formula-body { padding: 0.8rem 1.2rem; }
+.expr-block {
+  background: #fff;
+  border-left: 3px solid var(--orange-border);
+  padding: 0.5rem 1rem;
+  margin: 0.4rem 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.05rem;
+  overflow-x: auto;
+}
+.expr-text {
+  padding: 0.2rem 0;
+  color: #444;
+  font-size: 0.92rem;
+}
+.list-num {
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+  background: var(--orange-dark);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: bold;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+</style>
+
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+</head>
+<body>
+<div class="page-wrap">
+  <h1 class="chapter-title">第6章 微分法と積分法 公式集</h1>
+<h2 class="section-title">第1節 微分係数と導関数</h2>
+
+<div class="formula-card">
+  <div class="formula-header">関数f() の=a における微分係数<span class="formula-page">p.188</span></div>
+  <div class="formula-body">
+<div class="expr-block">\[ f′(a)=lim \]</div>
+<p class="expr-text">⁰</p>
+<div class="expr-block">\[ f(a+h)-f(a) \]</div>
+<p class="expr-text">h</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">接線の傾きと微分係数<span class="formula-page">p.189</span></div>
+  <div class="formula-body">
+<p class="expr-text">関数= f() のグラフ上の点A(a，f(a)) における接線の傾き</p>
+<p class="expr-text">は，関数f() の=a における微分係数f ′(a) に等しい。</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">導関数f′()<span class="formula-page">p.190</span></div>
+  <div class="formula-body">
+<div class="expr-block">\[ f′()=lim \]</div>
+<p class="expr-text">⁰</p>
+<div class="expr-block">\[ f(+h)-f() \]</div>
+<p class="expr-text">h</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">関数<span class="formula-page">p.191</span></div>
+  <div class="formula-body">
+<div class="expr-block">\[ 関数^n \]</div>
+<p class="expr-text">の導関数は</p>
+<p class="expr-text">定数関数c の導関数は</p>
+<div class="expr-block">\[ (^n)′=n^{n-1} \]</div>
+<div class="expr-block">\[ (c)′=0 \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">関数の定数倍および和，差の導関数<span class="formula-page">p.193</span></div>
+  <div class="formula-body">
+<p class="expr-text">k は定数とする。</p>
+<span class="list-num">1</span>
+<p class="expr-text">=kf() を微分すると</p>
+<span class="list-num">2</span>
+<p class="expr-text">= f()+g() を微分すると</p>
+<span class="list-num">3</span>
+<p class="expr-text">= f()−g() を微分すると</p>
+<div class="expr-block">\[ ′=kf′() \]</div>
+<div class="expr-block">\[ ′= f′()+g′() \]</div>
+<div class="expr-block">\[ ′= f′()-g′() \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">グラフ上の点における接線の方程式<span class="formula-page">p.196</span></div>
+  <div class="formula-body">
+<p class="expr-text">関数= f() のグラフ上の点(a，f(a)) における接線の方程式は</p>
+<div class="expr-block">\[ -f(a)= f′(a)(-a) \]</div>
+  </div>
+</div>
+
+<h2 class="section-title">第2節 関数の値の変化</h2>
+
+<div class="formula-card">
+  <div class="formula-header">関数f() の増減とf′() の符号<span class="formula-page">p.200</span></div>
+  <div class="formula-body">
+<p class="expr-text">ある区間で</p>
+<p class="expr-text">常にf′()&gt;0 ならば，f() はその区間で増≧する。</p>
+<p class="expr-text">常にf′()&lt;0 ならば，f() はその区間で減少する。</p>
+<p class="expr-text">常にf′()=0 ならば，f() はその区間で定数である。</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.204</span></div>
+  <div class="formula-body">
+<p class="expr-text">関数f() が=a で極値をとるならば，f′(a)=0 である。</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.204</span></div>
+  <div class="formula-body">
+<p class="expr-text">f′(a)=0 であっても，f() は=a で極値をとるとは限らない。</p>
+  </div>
+</div>
+
+<h2 class="section-title">第3節 積分法</h2>
+
+<div class="formula-card">
+  <div class="formula-header">関数f() の不定積分<span class="formula-page">p.213</span></div>
+  <div class="formula-body">
+<p class="expr-text">F′()= f() のときf()d= F()+C</p>
+<p class="expr-text">C は定数</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">関数<span class="formula-page">p.213</span></div>
+  <div class="formula-body">
+<div class="expr-block">\[ ^n \]</div>
+<div class="expr-block">\[ d= \]</div>
+<span class="list-num">1</span>
+<div class="expr-block">\[ n+1 ^n \]</div>
+<div class="expr-block">\[ ^1+C \]</div>
+<p class="expr-text">C は積分定数</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">関数の定数倍および和，差の不定積分<span class="formula-page">p.214</span></div>
+  <div class="formula-body">
+<p class="expr-text">F′()= f()，G′()= g() のとき</p>
+<div class="expr-block">\[ 1 kf()d=kF()+C \]</div>
+<p class="expr-text">k は定数</p>
+<div class="expr-block">\[ 2 { f()+g()}d= F()+G()+C \]</div>
+<div class="expr-block">\[ 3 { f()-g()}d= F()-G()+C \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">定積分<span class="formula-page">p.216</span></div>
+  <div class="formula-body">
+<p class="expr-text">F′()= f() のとき</p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d=F() \]</div>
+<div class="expr-block">\[ = F(b)-F(a) \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">関数の定数倍および和，差の定積分<span class="formula-page">p.218</span></div>
+  <div class="formula-body">
+<p class="expr-text">1 </p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ kf()d=k \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d \]</div>
+<p class="expr-text">k は定数</p>
+<p class="expr-text">2 </p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ { f()+g()}d= \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d+ \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ g()d \]</div>
+<p class="expr-text">3 </p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ { f()-g()}d= \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d- \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ g()d \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">定積分の性質<span class="formula-page">p.219</span></div>
+  <div class="formula-body">
+<p class="expr-text">1 </p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d=0 \]</div>
+<p class="expr-text">2 </p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d=- \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d \]</div>
+<p class="expr-text">3 </p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d= \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d+ \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.221</span></div>
+  <div class="formula-body">
+<p class="expr-text">a を定数とするとき，の関数</p>
+<p class="expr-text"></p>
+<p class="expr-text">f(t)dt の導関数はf() である。</p>
+<p class="expr-text">すなわち</p>
+<p class="expr-text">d</p>
+<p class="expr-text">d</p>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f(t)dt= f() \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">定積分と面積⑴<span class="formula-page">p.224</span></div>
+  <div class="formula-body">
+<p class="expr-text">区間a≦≦b でf()≧0 のとき，</p>
+<p class="expr-text">= f() のグラフと軸および2 直線</p>
+<p class="expr-text">=a，=b で囲まれた部分の面積S は</p>
+<div class="expr-block">\[ S= \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ f()d \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">定積分と面積⑵<span class="formula-page">p.225</span></div>
+  <div class="formula-body">
+<p class="expr-text">区間a≦≦b でf()≦0 のとき，</p>
+<p class="expr-text">= f() のグラフと軸および2 直線</p>
+<p class="expr-text">=a，=b で囲まれた部分の面積S は</p>
+<div class="expr-block">\[ S= \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ {-f()}d \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">定積分と面積⑶<span class="formula-page">p.226</span></div>
+  <div class="formula-body">
+<p class="expr-text">区間a≦≦b でf()≧g() のとき，</p>
+<p class="expr-text">= f() と=g() のグラフおよび2 直線</p>
+<p class="expr-text">=a，=b で囲まれた部分の面積S は</p>
+<div class="expr-block">\[ S= \]</div>
+<p class="expr-text"></p>
+<div class="expr-block">\[ { f()-g()}d \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">身に付けたい表現<span class="formula-page">p.256</span></div>
+  <div class="formula-body">
+
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.256</span></div>
+  <div class="formula-body">
+<span class="list-num">1</span>
+<p class="expr-text">等式が恒等式等式は=0，1，−1 で成り立つ</p>
+<span class="list-num">2</span>
+<p class="expr-text">等式が=0，1，−1 で成り立つa=3，b=5，c=−4</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.256</span></div>
+  <div class="formula-body">
+<p class="expr-text">a=3，b=5，c=−4 等式は=0，1，−1 で成り立つ</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.256</span></div>
+  <div class="formula-body">
+<p class="expr-text">等式が=0，1，−1 で成り立つ等式は恒等式</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">(<span class="formula-page">p.257</span></div>
+  <div class="formula-body">
+
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.257</span></div>
+  <div class="formula-body">
+<p class="expr-text">点PがAP=BP を満たす点Pは直線2−−3=0 上にある</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.257</span></div>
+  <div class="formula-body">
+<p class="expr-text">点Pが直線2−−3=0 上にある点PはAP=BP を満たす</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.257</span></div>
+  <div class="formula-body">
+<span class="list-num">1</span>
+<p class="expr-text">f() が=2 で極小値−6 をとるf ′(2)=0，f(2)=−6</p>
+<span class="list-num">2</span>
+<div class="expr-block">\[ f ′(2)=0，f(2)=-6 a=-12，b=10 \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.257</span></div>
+  <div class="formula-body">
+<div class="expr-block">\[ a=-12，b=10 f ′(2)=0，f(2)=-6 \]</div>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">公式<span class="formula-page">p.257</span></div>
+  <div class="formula-body">
+<p class="expr-text">f ′(2)=0，f(2)=−6 f() が=2 で極小値−6 をとる</p>
+  </div>
+</div>
+
+<div class="formula-card">
+  <div class="formula-header">等号が成り立つ(<span class="formula-page">p.258</span></div>
+  <div class="formula-body">
+
+  </div>
+</div>
+
+</div>
+</body>
+</html>
